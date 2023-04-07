@@ -1,6 +1,7 @@
 import "./globals.css";
-
 import { Open_Sans } from "next/font/google";
+import { Footer, Nav } from "@/components/layout";
+
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,7 +16,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={font.className}>
-            <body>{children}</body>
+            <body>
+                <Nav />
+
+                <main>{children}</main>
+
+                <Footer />
+            </body>
         </html>
     );
 }
